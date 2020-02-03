@@ -20,6 +20,15 @@ html {
 	text-rendering: optimizeLegibility;
 }
 
+.clearfix {zoom: 1}
+.clearfix:after {
+	content: '.';
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
 /* End of basic setup */
 
 /* Reusable styles */
@@ -33,7 +42,9 @@ section {
 	padding: 80px 0;	
 }
 
-
+.box {
+	padding: 1;
+}
 
 /* --- Headings --- */
 h1,
@@ -87,12 +98,42 @@ h3 {
 	line-height: 145%;
 }
 
+/* --- Links ---*/
+a:link,
+a:visited {
+	color: #e67e22;
+	text-decoration: none;
+	padding-bottom: 1px; 
+	border-bottom: 1px solid #e67e22;
+	transition: border-bottom 0.2s, color 0.2s;
+}
+
+a:hover,
+a:active {
+	color: #555;
+	border-bottom: 1px solid transparent;
+}
+
 /* --- Icons --- */
 .icon-big {
 	font-size: 350%;
 	display: block;
 	color: #e67e22;
 	margin-bottom: 10px;
+}
+
+.icon-sm {
+	display: inline-block;
+	width: 30px;
+	text-align: center;
+	color: #e67e22;
+	font-size: 120%;
+	margin-right: 10px;
+
+	/* align text and icons */
+	line-height: 120%;
+	vertical-align: middle;
+	margin-top: -5px;
 }
 
 /* --- Buttons --- */
@@ -144,6 +185,7 @@ header {
 	background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(img/hero.jpg);
 	background-size: cover;
 	background-position: center;
+	background-attachment: fixed;
 	height: 100vh;
 }
 
@@ -193,6 +235,163 @@ header {
 
 /* Features section */
 
+.features-section .long-copy {
+	margin-bottom: 40px;
+}
+
+/* End of Features section */
 
 
-/* End of Features section 
+/* Meals section */
+
+.meals-section {
+	padding: 0;
+}
+
+.meals-showcase {
+	list-style: none;
+	width: 100%;	
+}
+
+.meals-showcase li {
+	display: block;
+	float: left;
+	width: 25%;
+}
+
+.meal-photo {
+	width: 100%;
+	margin: 0;
+	overflow: hidden;
+	background-color: #000;
+}
+
+.meal-photo img {
+	opacity: 0.7;
+	width: 100%;
+	height: auto;
+	transform: scale(1.15);
+	transition: transform 0.5s, opacity 0.5s;
+}
+
+.meal-photo img:hover {
+	opacity: 1;
+	transform: scale(1.03);
+}
+
+/* End of Meals section */
+
+/* How It Works section */
+
+.steps-section {
+	background-color: #f4f4f4;
+}
+
+.steps-box {
+	margin-top: 30px;
+}
+
+.steps-box:first-child {
+	text-align: right;
+	padding-right: 3%:
+}
+
+.steps-box:last-child {
+	text-align: left;
+	padding-left: 3%;
+	padding-top: 40px;
+}
+
+.app-screen {
+	width: 40%;
+}
+
+.works-step {
+	margin-bottom: 50px;
+}
+
+.works-step:last-of-type {
+	margin-bottom: 80px;
+}
+
+.works-step div {
+	color: #e67e22;
+	border: 2px solid #e67e22;
+	display: inline-block;
+	border-radius: 50%;
+	height: 55px;
+	width: 55px;
+	text-align: center;
+	padding: 5px;
+	float: left;
+	font-size: 150%;
+	margin-right: 25px;
+}
+
+.btn-app img {
+	height: 50px;
+	width: auto;
+	margin-right: 10px;
+}
+
+.btn-app:link,
+.btn-app:visited {
+	border: 0;
+}
+
+/* End of How It Works section */
+
+/* Cities section */
+
+.box img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 15px;
+}
+
+.city-feature {
+	margin-bottom: 5px;
+}
+
+/* End of Cities section */
+
+/* Testmonials section */
+
+.testmonials-section {
+	color: #fff;
+	background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(img/back-customers.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+blockquote {
+	padding: 25;
+	font-style: italic;
+	line-height: 145%;
+	position: relative;
+	margin-top: 40px;
+}
+
+blockquote::before {
+	content: "\201C";
+	font-size: 500%;
+	display: block;
+	position: absolute;
+	top: -5px;
+	left: -3px;
+}
+
+cite {
+	display: block;
+	font-size: 90%;
+	margin-top: 25px;
+}
+
+cite img {
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+/* End of Testmonials section */
